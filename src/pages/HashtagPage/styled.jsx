@@ -8,16 +8,8 @@ export const Container = styled.div`
   justify-content: space-between;
   align-content: left;
   margin: 150px auto 0;
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
 
-  @media (max-width: 480px) {
-    width: 98.5vw;
-  }
-
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 480px) {
     width: 45vw;
   }
 `
@@ -26,29 +18,7 @@ export const Title = styled.h2`
   color: white;
   font-size: 35px;
   font-family: 'Noto Sans Thai', sans-serif;
-  margin-bottom: 80px;
-  margin-top: 50px;
-  @media (max-width: 650px) {
-    margin-top: 80px;
-  }
-`
-
-export const PublicationBox = styled.div`
-  background-color: white;
-  height: auto;
-  min-height: 30vh;
-  border-radius: 15px;
   margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-
-  @media screen and (min-width: 480px) {
-    flex-direction: row;
-  }
-  @media screen and (max-width: 480px) {
-    border-radius: 0;
-  }
 `
 
 export const BoxImage = styled.div`
@@ -74,99 +44,6 @@ export const UserImage = styled.img`
   }
 `
 
-export const BoxInfos = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: left;
-  height: 100%;
-  width: 100%;
-  font-family: 'Assistant', sans-serif;
-  font-weight: 200;
-  margin-left: 20px;
-
-  h1 {
-    color: #6b6b6b;
-    font-size: 25px;
-    margin-bottom: 10px;
-  }
-
-  .url {
-    background-color: #efefef;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-family: 'Assistant', sans-serif;
-    font-weight: 200;
-    font-size: 20px;
-    padding-left: 10px;
-    height: 38px;
-    &:disabled {
-      background-color: #d3d3d3;
-      cursor: not-allowed;
-    }
-
-    @media screen and (min-width: 480px) {
-      font-size: 16px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    margin-left: 0;
-  }
-
-  .description {
-    background-color: #efefef;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-family: 'Assistant', sans-serif;
-    font-weight: 200;
-    font-size: 20px;
-    padding-left: 10px;
-    height: 100px;
-    align-items: flex-start;
-
-    &:disabled {
-      background-color: #d3d3d3;
-      cursor: not-allowed;
-    }
-
-    &:focus {
-      color: black;
-    }
-
-    @media screen and (min-width: 480px) {
-      font-size: 16px;
-      margin-left: none;
-    }
-  }
-
-  button {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background-color: #1676f2;
-    color: white;
-    font-size: 15px;
-    margin-left: auto;
-    width: 100px;
-    cursor: pointer;
-    &:disabled {
-      background-color: #d3d3d3;
-      cursor: not-allowed;
-    }
-    @media screen and (min-width: 480px) {
-      font-size: 14px;
-    }
-  }
-  @media screen and (min-width: 480px) {
-    width: 100vw;
-  }
-`
-
 export const PostBox = styled.div`
   background-color: black;
   height: auto;
@@ -178,10 +55,6 @@ export const PostBox = styled.div`
   padding: 20px;
   @media screen and (min-width: 480px) {
     flex-direction: row;
-  }
-
-  @media screen and (max-width: 480px) {
-    border-radius: 0;
   }
 `
 
@@ -197,17 +70,16 @@ export const BoxInfosPost = styled.div`
   font-family: 'Assistant', sans-serif;
   color: white;
 
-  > a:last-child {
+  a {
     height: auto;
     min-height: 20vh;
     border-radius: 8px;
     border: 1px solid #b9b9b9;
-    color: #cecece;
     cursor: pointer;
   }
 
   @media screen and (min-width: 480px) {
-    width: 100vw;
+    width: 37vw;
     padding: 20px;
   }
 `

@@ -20,10 +20,13 @@ import {
 } from './styled'
 import AuthContext from '../../context/AuthContext'
 import userIcon from '../../assets/images/userIcon.jpeg'
+import react from '../../assets/images/react.png'
 import axios from 'axios'
-import { AiFillDelete, AiOutlineEdit as GrEdit} from 'react-icons/ai'
+import { AiFillDelete, AiOutlineEdit as GrEdit } from 'react-icons/ai'
 import DeleteModal from '../../components/DeleteModal/DeleteModal'
 import loadingImage from '../../assets/images/loadingImage.gif'
+import { Link, useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default function Home() {
   const { user, token } = useContext(AuthContext)
@@ -40,6 +43,7 @@ export default function Home() {
   const [deleting, setDeleting] = useState(false)
   const [editingDescription, setEditingDescription] = useState(null)
   const descriptionRefs = useRef({})
+  console.log(posts)
   const config = { headers: { Authorization: `Bearer ${token}` } }
 
   // Carregar posts ao carregar a página
@@ -258,9 +262,12 @@ export default function Home() {
               <BoxInfosPost>
                 <Text>
                   <Box>
-                    <h1 data-test="username">
-                      {post.userName ? post.userName : 'Anonymous'}
-                    </h1>
+                    <Link to={`/user/${post.userId}`}>
+                      <h1 data-test="username">
+                        {post.userName ? post.userName : 'Anonymous'}
+                      </h1>
+                    </Link>
+
                     {post.userId !== user.id ? (
                       <></>
                     ) : (
@@ -299,7 +306,19 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Go to page
+                  {post.length > 0 ? (
+                    <>Go to page</>
+                  ) : (
+                    <MetaData>
+                      <TextMetaData>
+                        {/* <p>{post.urlDescr}</p> */}
+                        {/* <p>{post.url}</p> */}
+                      </TextMetaData>
+                      <>
+                        <img src={react} alt="" />
+                      </>
+                    </MetaData>
+                  )}
                 </a>
               </BoxInfosPost>
             </PostBox>
@@ -316,3 +335,17 @@ export default function Home() {
     </>
   )
 }
+
+const MetaData = styled.div`
+  display: flex;
+  img {
+    height: 100%;
+  }
+`
+
+const TextMetaData = styled.div`
+  width: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+`
